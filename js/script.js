@@ -5,7 +5,7 @@
 {
 const titleClickHandler = function (event) {
     event.preventDefault();
-    // const clickedElement = this;
+    const clickedElement = this;
     
     console.log('Link was clicked!');
 
@@ -39,14 +39,6 @@ const titleClickHandler = function (event) {
     const clickedArticle = document.querySelector(articleSelector);
     clickedArticle.classList.add('active');
 }
-
-const links = document.querySelectorAll('.titles a');
-console.log(links);
-
-for (let link of links) {
-    link.addEventListener('click', titleClickHandler);
-}
-
 
 // Generate Title Links
 
@@ -86,7 +78,12 @@ function generateTitleLinks(){
     // linkHTML.insertAdjacentHTML('beforeend', linkHTML);
     
   }
-const clickedElement = this;
+  const links = document.querySelectorAll('.titles a');
+console.log(links);
+
+for (let link of links) {
+    link.addEventListener('click', titleClickHandler);
+  }
 }
 
 generateTitleLinks();
