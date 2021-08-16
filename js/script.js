@@ -5,7 +5,7 @@
 {
 const titleClickHandler = function (event) {
     event.preventDefault();
-    const clickedElement = this;
+    // const clickedElement = this;
     
     console.log('Link was clicked!');
 
@@ -41,6 +41,7 @@ const titleClickHandler = function (event) {
 }
 
 const links = document.querySelectorAll('.titles a');
+console.log(links);
 
 for (let link of links) {
     link.addEventListener('click', titleClickHandler);
@@ -56,17 +57,18 @@ const optTitleListSelector = '.titles';
 function generateTitleLinks(){
 
   /* [DONE] remove contents of titleList */
-  const titleList = document.querySelector(optTitleListSelector).innerHTML = '';
+  const titleList = document.querySelector(optTitleListSelector);
+  titleList.innerHTML = '';
   console.log(titleList);
 
   let html = '';
 
   /* for each article */
-  const articles = document.querySelectorAll('.titles');
+  const articles = document.querySelectorAll(optArticleSelector);
   for(let article of articles){
 
     /* get the article id */
-    const articleId = article.getAttribute('.id');
+    const articleId = article.getAttribute('id');
     console.log(articleId);
 
     /* find the title element */
@@ -81,7 +83,10 @@ function generateTitleLinks(){
 
     /* insert link into titleList */
     titleList.innerHTML = titleList.innerHTML + linkHTML;
+    // linkHTML.insertAdjacentHTML('beforeend', linkHTML);
+    
   }
+const clickedElement = this;
 }
 
 generateTitleLinks();
