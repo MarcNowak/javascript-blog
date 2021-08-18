@@ -6,7 +6,6 @@
   const titleClickHandler = function (event) {
     event.preventDefault();
     const clickedElement = this;
-
     console.log('Link was clicked!');
 
     /* [DONE] remove class 'active' from all article links  */
@@ -28,7 +27,7 @@
     }
 
     /* [DONE] get 'href' attribute from the clicked link */
-    const articleSelector = clickedElement.getAttribute("href");
+    const articleSelector = clickedElement.getAttribute('href');
     console.log(articleSelector);
 
     /* [DONE] find the correct article using the selector (value of 'href' attribute) */
@@ -38,7 +37,7 @@
     /* [DONE] add class 'active' to the correct article */
     const clickedArticle = document.querySelector(articleSelector);
     clickedArticle.classList.add('active');
-  }
+  };
 
   // Generate Title Links
 
@@ -52,8 +51,6 @@
     const titleList = document.querySelector(optTitleListSelector);
     titleList.innerHTML = '';
     console.log(titleList);
-
-    let html = '';
 
     /* for each article */
     const articles = document.querySelectorAll(optArticleSelector);
