@@ -214,7 +214,7 @@
       // console.log(articleAutors);
 
       /* [DONE] generate HTML of the link */
-      const authorLinkHTML = '<a href="#-author' + authorTags + '"><span>' + 'by ' + authorTags + '</span></a>';
+      const authorLinkHTML = '<span>by </span><a href="#-author' + authorTags + '"><span>' + authorTags + '</span></a>';
       // console.log(tagLinkHTML);
 
       /* add generated code to html variable */
