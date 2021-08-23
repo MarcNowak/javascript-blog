@@ -192,7 +192,7 @@
       /* [NEW] END LOOP: for each tag in allTags: */
 
       /*[NEW] add HTML from allTagsHTML to tagList */
-      allTagsHTML += tagLinkHTML;
+      tagList.innerHTML = allTagsHTML;
       }
     }
   }
