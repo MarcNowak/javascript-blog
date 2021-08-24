@@ -310,7 +310,7 @@
 
       /* [NEW] START LOOP: for each tag in allAuthors: */
       for (let author in allAuthors) {
-        allAuthorsHTML += '<li><a href="#author-name' + author + '">' + author + ' (' + allAuthors[author] + ') ' + '</a></li> ';
+        allAuthorsHTML += '<li><a href="#author-' + author + '">' + author + ' (' + allAuthors[author] + ') ' + '</a></li> ';
       }
 
       /*[NEW] add HTML from allAutorsHTML to tagList */
