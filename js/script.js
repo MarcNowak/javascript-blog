@@ -5,6 +5,17 @@
 //   });
 {
 
+  const optArticleSelector = '.post';
+  const optTitleSelector = '.post-title';
+  const optTitleListSelector = '.titles';
+  const optArticleTagsSelector = '.post-tags .list';
+  const optArticleAuthorSelector = '.post-author';
+  const optTagListSelector = '.tags.list';
+  const optCloudClassCount = 5;
+  const optCloudClassPrefix = 'tag-size-';
+  const optAuthorsListSelector = '.author-name';
+
+
   // Generate Title Click Handler
 
   const titleClickHandler = function (event) {
@@ -44,16 +55,6 @@
   };
 
   // Generate Title Links
-
-  const optArticleSelector = '.post';
-  const optTitleSelector = '.post-title';
-  const optTitleListSelector = '.titles';
-  const optArticleTagsSelector = '.post-tags .list';
-  const optArticleAuthorSelector = '.post-author';
-  const optTagListSelector = '.tags.list';
-  const optCloudClassCount = 5;
-  const optCloudClassPrefix = 'tag-size-';
-  const optAuthorsListSelector = '.author-name';
 
   function generateTitleLinks(customSelector = '') {
     console.log(customSelector);
