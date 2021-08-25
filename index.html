@@ -258,17 +258,37 @@
       </main>
     </div>
   </div>
-  <script id="template-article-link" type="text/x-handlebars-template"> <!-- Template Article Link Start-->
+  <script id="template-article-link" type="text/x-handlebars-template"> <!-- Template Article Link Start - 1-->
     <li><a href="#{{ id }}"><span>{{ title }}</span></a></li>
   </script>                                                             <!-- Template Article Link End-->
 
-  <script id="template-tag-link" type="text/x-handlebars-template">     <!-- Template Tag Link Start-->
+  <script id="template-tag-link" type="text/x-handlebars-template">     <!-- Template Tag Link Start - 2-->
     <li><a href="#{{ id }}"><span>{{ title }}</span></a></li>
   </script>                                                             <!-- Template Tag Link End-->
 
-  <script id="template-author-link" type="text/x-handlebars-template">  <!-- Template Author Link Start-->
-    <li><a href="#{{ id }}"><span>{{ title }}</span></a></li>
+  <script id="template-author-link" type="text/x-handlebars-template">  <!-- Template Author Link Start - 3-->
+   <span>by</span> <a href="#{{ id }}"><span>{{ title }}</span></a>
   </script>                                                             <!-- Template Author Link End-->
+
+  <script id="template-tag-cloud-link" type="text/x-handlebars-template"><!-- Template Tag Cloud Link Start - 4-->
+    {{#each tags}}
+    <li>
+      <a href="#tag-{{tag}}" class="{{className}}">
+        {{tag}} <!-- ({{count}}) commented, becouse if the counter is presented, it doesn't look good :)-->
+      </a>
+    </li>
+    {{/each}}
+   </script>                                                             <!-- Template Tag Cloud Link Link End-->
+
+   <script id="template-author-cloud-link" type="text/x-handlebars-template"><!-- Template Tag Cloud Link Start - 5-->
+    {{#each tags}}
+    <li>
+      <a href="#author-{{author}}" class="{{author-name}}">
+        {{tag}} ({{count}})
+      </a>
+    </li>
+    {{/each}}
+   </script>                                                             <!-- Template Tag Cloud Link Link End-->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
   <script src="js/script.js"></script>
