@@ -4,7 +4,7 @@
     tagLink: Handlebars.compile(document.querySelector('#template-tag-link').innerHTML),
     authorLink: Handlebars.compile(document.querySelector('#template-author-link').innerHTML),
     tagCloudLink: Handlebars.compile(document.querySelector('#template-tag-cloud-link').innerHTML),
-    authorCloudLink: Handlebars.compile(document.querySelector('#template-author-cloud-link').innerHTML)
+    authorCloudLink: Handlebars.compile(document.querySelector('#template-author-cloud-link').innerHTML),
 
   }
 
@@ -328,15 +328,24 @@
       const authorList = document.querySelector(optAuthorsListSelector);
 
       /* [NEW] create variable for all links HTML code */
-      let allAuthorsHTML = '';
+      // let allAuthorsHTML = '';
+      const allAuthorsData = {authors: []};
+
 
       /* [NEW] START LOOP: for each tag in allAuthors: */
       for (let author in allAuthors) {
-        allAuthorsHTML += '<li><a href="#author-' + author + '">' + author + ' (' + allAuthors[author] + ') ' + '</a></li> ';
+        // allAuthorsHTML += '<li><a href="#author-' + author + '">' + author + ' (' + allAuthors[author] + ') ' + '</a></li> ';
+
+        allAuthorsData.authors.push({
+          tag: tag,
+          count: allAuthors[tag],
+          className: calculateTagClass(allAuthors[authorsTag], tagsParams)
+        });
       }
 
       /*[NEW] add HTML from allAutorsHTML to tagList */
-      authorList.innerHTML = allAuthorsHTML;
+      // authorList.innerHTML = allAuthorsHTML;
+      authorList.innerHTML = templates.authorCloudLink(allAuthorsData)
     }
   }
 
