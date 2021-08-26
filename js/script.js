@@ -339,7 +339,7 @@
         allAuthorsData.authors.push({
           author: author,
           count: allAuthors[author],
-          className: calculateTagClass(allAuthors[authorsTag], tagsParams)
+          // className: calculateTagClass(allAuthors[author], tagsParams)
         });
       }
 
