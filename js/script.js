@@ -337,8 +337,8 @@
         // allAuthorsHTML += '<li><a href="#author-' + author + '">' + author + ' (' + allAuthors[author] + ') ' + '</a></li> ';
 
         allAuthorsData.authors.push({
-          tag: tag,
-          count: allAuthors[tag],
+          author: author,
+          count: allAuthors[author],
           className: calculateTagClass(allAuthors[authorsTag], tagsParams)
         });
       }
